@@ -248,6 +248,7 @@ const serve = () => {
 
   watch(Paths.scripts.src, { events: ['all'], delay: 100 }, series(
     buildJs,
+    refresh,
   ));
 
   watch(Paths.images.src, { events: ['all'], delay: 100 }, series(
