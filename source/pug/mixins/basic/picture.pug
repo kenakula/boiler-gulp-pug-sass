@@ -1,6 +1,6 @@
-//- mixin picture(props)
-//-   - const {path, imgType, altText, width, height} = props;
+mixin picture(props)
+  - const {path, imgType, altText, width, height} = props;
 
-//-   picture
-//-     source(type='image/webp', srcset=`${path}@1x.webp 1x, ${path}@2x.webp 2x`)
-//-     img(src=`${path}@1x.${imgType}`, srcset=`${path}@2x.${imgType} 2x`, alt=altText, width= width ? width : null, height= height ? height : null)&attributes(attributes)
+  picture
+    source(type='image/webp', srcset=`${path}@1x.webp 1x, ${path}@2x.webp 2x`)
+    img(src=`${path}@1x.${imgType}`, srcset=`${path}@2x.${imgType} 2x`, alt=altText, width= width ? width : null, height= height ? height : null)&attributes(attributes)

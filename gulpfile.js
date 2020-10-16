@@ -111,7 +111,7 @@ const Paths = {
 
 // compiles pug to html
 const compilePug = () => {
-  return src(Paths.html.src, { since: lastRun(compilePug) })
+  return src(Paths.html.src)
     .pipe(plumber({
       errorHandler: function (err) {
         console.log(err.message);

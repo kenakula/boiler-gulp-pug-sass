@@ -1,7 +1,7 @@
-//- include ../base/mixins.pug
-//- include ../base/header.pug
-//- include ../base/footer.pug
-include ../base/modal.pug
+include mixins.pug
+include header.pug
+include footer.pug
+include modal.pug
 
 block data
 block variables
@@ -22,7 +22,15 @@ html(lang='ru')
     link(rel='stylesheet', href='css/style.min.css')
 
   body
-    block main
+    +sprite()
+    div(class=(wrapperMod) ? 'wrapper wrapper--' + wrapperMod : 'wrapper')
+      if (hasHeader)
+        +header(headerMod, currentPage)
+
+      block main
+
+      if (hasFooter)
+        +footer(footerMod)
 
     block modals
 
