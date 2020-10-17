@@ -2,15 +2,17 @@ extends ../base/layout.pug
 
 block data
   include ../data/placeholder.pug
+  include ../data/main-nav.data.pug
 
 block variables
-  - var title = 'ProjectName — Главная'
-  - var wrapperMod = ''
-  - var hasHeader = true
-  - var headerMod = ''
-  - var hasFooter = true
-  - var footerMod = ''
-  - var currentPage = 'main' //- для остальных страниц пишем либо пустую строку, либо индекс
+  -
+    const title = 'ProjectName — Главная'
+    const hasHeader = true
+    const hasFooter = true
+    const currentPage = 'main' //- для остальных страниц пишем либо пустую строку, либо индекс
+
+block nav
+  +main-nav(mainNav)
 
 block main
   main
@@ -24,9 +26,6 @@ block main
       p(style='margin-top: 40px;') Пример импорта из `pug/data`
       h3= heading.title
       i= heading.description
-
-      p(style='margin-top: 40px;') Пример использования +img()
-      +img('content', 'placeholder', 'jpg', 250, 250, 'Пример')
 
 block modals
   +modal('modal--feedback')

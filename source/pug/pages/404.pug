@@ -1,0 +1,12 @@
+extends ../base/layout.pug
+
+block variables
+  -
+    var title = '404 Error | Page not found'
+    var hasHeader = true
+    var hasFooter = true
+    var currentPage = '404' // для остальных страниц пишем либо пустую строку, либо индекс
+
+block main
+  h1 Error 404
+  p Page not found.

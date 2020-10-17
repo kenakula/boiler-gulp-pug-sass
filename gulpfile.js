@@ -10,6 +10,7 @@ const fs = require('fs');
 
 // styles
 const sass = require('gulp-sass');
+const sassGlob = require('gulp-sass-glob');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const csso = require('gulp-csso');
@@ -139,6 +140,7 @@ const compileCss = () => {
       }
     }))
     .pipe(sourcemap.init())
+    .pipe(sassGlob())
     .pipe(sass())
     .pipe(postcss(postCssPlugins))
     .pipe(dest(Paths.styles.dest))
@@ -290,6 +292,7 @@ const serve = () => {
     optimizeImg,
   ))
 
+  // svg sprite watcher
   watch(Paths.images.spriteSrc, { events: ['all'], delay: 100 }, series(
     generateSvgSprite,
     refresh,

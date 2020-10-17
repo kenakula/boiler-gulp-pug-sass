@@ -1,7 +1,9 @@
 extends ../base/layout.pug
 
 block variables
-  - const title = 'Разводящая страница';
+  -
+    const title = 'Разводящая страница';
+    const hasFooter = true;
 
 block main
   style.
@@ -59,13 +61,12 @@ block main
         src: 'main.html'
       },
       {
-        name: 'Название страницы (состояние страницы, если отдельное) — ссылка на страницу',
-        src: '#'
+        name: '404 Error — 404.html',
+        src: '404.html'
       },
     ]
 
   main.container.main-index
-    img(src='https://via.placeholder.com/300x150', width='300', alt='Логотип проекта')
     h1 Список страниц и компонентов проекта
       ol
         each page in pages

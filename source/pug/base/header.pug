@@ -1,19 +1,4 @@
-mixin header(headerMod, currentPage)
-  -
-    var headerLinks = [
-      {
-        href: '#',
-        text: 'Страница 1'
-      },
-      {
-        href: '#',
-        text: 'Страница 2'
-      },
-      {
-        href: '#',
-        text: 'Страница 3'
-      },
-    ]
+mixin header(currentPage, headerMod)
 
   header(class=(headerMod) ? 'header header--' + headerMod : 'header')
     .header__wrapper
@@ -21,15 +6,4 @@ mixin header(headerMod, currentPage)
         a.header__logo Логотип
       else
         a.header__logo(href='main.html', aria-label='Переход на главную') Логотип
-      nav.main-nav
-        button.main-nav__toggle.btn-reset(type='button', aria-label='Переключатель отображения меню', aria-pressed='false')
-          +icon('icon-burger', 20, 20)
-        .main-nav__wrapper
-          ul.main-nav__list
-            each link, index in headerLinks
-              if(index === currentPage)
-                li
-                  a.main-nav__link.main-nav__link--active= link.text
-              else
-                li
-                  a.main-nav__link(href=link.href)= link.text
+      block

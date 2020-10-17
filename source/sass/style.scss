@@ -18,10 +18,12 @@
 // Blocks
 //---------------------------------
 
-@import "blocks/footer.scss";
-@import "blocks/header.scss";
-@import "blocks/modal.scss";
+@import "blocks/**/*.scss";
 
+// @import "blocks/page.scss";
+// @import "blocks/footer.scss";
+// @import "blocks/header.scss";
+// @import "blocks/modal.scss";
 
 // используйте это для отключения ховеров на тач устройствах
 // ! но не используйте это для текстовых полей ( input, textarea )

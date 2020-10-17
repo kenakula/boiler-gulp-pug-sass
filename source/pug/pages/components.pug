@@ -1,15 +1,12 @@
 extends ../base/layout.pug
 
 block data
+  include ../data/main-nav.data.pug
 
 block variables
-  - var title = 'Компоненты'
-  - var wrapperMod = ''
-  - var hasHeader = true
-  - var headerMod = ''
-  - var hasFooter = true
-  - var footerMod = ''
-  - var currentPage = ''
+  -
+    const title = 'Компоненты';
+    const pageDescription = 'Компоненты используемые в проекте';
 
 block main
   style.
@@ -51,6 +48,13 @@ block main
       padding: 20px 0;
     }
 
+    .component-container {
+      min-height: 100px;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.2);
+      border: 1px solid grey;
+    }
+
   main
     .container
       a.components-backwards(href='index.html')
@@ -59,8 +63,9 @@ block main
       h1 Компоненты, используемые в вёрстке
 
       section
-        h2 Название компонента или группы компонентов
+        h2 main-nav + toggler
 
-        p Класс компонента \ модификаторы
-        p(style='color: red;') При необходимости, подсказки \ предупреждение \ важная информация
-        div Компонент
+        p Класс компонента: <span style='color: blue;'>.main-nav</span> \ модификаторы: <span style='color: blue;'>--expanded</span>
+        p(style='color: tomato;') Вставляется в блоке <b>nav</b> pug файла, принимает в себя объект из pug/data
+        .component-container
+          +main-nav(mainNav)

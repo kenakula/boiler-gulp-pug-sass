@@ -1,0 +1,42 @@
+.main-nav {
+  display: flex;
+  position: relative;
+  align-items: center;
+  margin-right: 24px;
+
+  ul {
+    @include list-reset;
+
+    display: flex;
+    position: absolute;
+    left: 50px;
+    top: 2px;
+    min-width: 300px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform $default-transition-settings, opacity 0.7s ease-in;
+    opacity: 0;
+  }
+
+  li {
+    margin-right: 10px;
+    flex-shrink: 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  a {
+    font-size: rem(14);
+    text-decoration: none;
+    transition: opacity $default-transition-settings;
+  }
+
+  &--expanded {
+    ul {
+      transform: scaleX(1);
+      opacity: 1;
+    }
+  }
+}

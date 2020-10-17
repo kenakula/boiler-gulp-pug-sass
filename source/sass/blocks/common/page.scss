@@ -1,0 +1,21 @@
+.page {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-text-size-adjust: 100%; // stylelint-disable-line
+  min-width: $viewport--sm;
+  min-height: 100%;
+
+  &__inner {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__content {
+    flex-grow: 1;
+  }
+
+  &__footer-wrapper {
+    position: relative;
+    flex-shrink: 0;
+  }
+}
