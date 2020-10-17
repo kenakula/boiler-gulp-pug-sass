@@ -30,10 +30,9 @@ const imagemin = require('gulp-imagemin');
 const webp = require('gulp-webp');
 const svgstore = require('gulp-svgstore');
 const svgmin = require('gulp-svgmin');
-const { reload } = require('browser-sync');
 
 // Images optimizing options
-let optimizingPlugins = [
+const optimizingPlugins = [
   imagemin.gifsicle({ interlaced: true }),
   imagemin.mozjpeg({ quality: 75, progressive: true }),
   imagemin.optipng({ optimizationLevel: 5 }),
@@ -48,7 +47,7 @@ let optimizingPlugins = [
 ];
 
 // postCSS plugins options
-let postCssPlugins = [
+const postCssPlugins = [
   autoprefixer({ grid: true }),
   mqpacker({
     sort: true
@@ -57,6 +56,7 @@ let postCssPlugins = [
   objectFitImages(),
 ];
 
+// -------------------------------
 // paths
 const SOURCE_PATH = 'source/';
 const BUILD_PATH = 'build/';
@@ -98,7 +98,11 @@ const Paths = {
     output: `${BUILD_PATH}favicons/`,
   },
   manifest: {
-    src: `${SOURCE_PATH}*.webmanifest`,
+    src: `${SOURCE_PATH}favicons/*.webmanifest`,
+    output: BUILD_PATH,
+  },
+  browserconfig: {
+    src: `${SOURCE_PATH}favicons/browserconfig.xml`,
     output: BUILD_PATH,
   },
   video: {
@@ -107,7 +111,7 @@ const Paths = {
   }
 };
 
-// functions
+// -------------------------------
 
 // compiles pug to html
 const compilePug = () => {
@@ -174,7 +178,9 @@ exports.createWebp = createWebp;
 
 // optimizing images
 const optimizeImg = () => {
-  return src(`${Paths.images.dest}*.{jpg,png,gif,webp,svg}`)
+  return src(`${Paths.images.dest}*.{jpg,png,gif,webp,svg}`, {
+    since: lastRun(optimizeImg)
+  })
     .pipe(imagemin(optimizingPlugins))
     .pipe(debug({ title: 'optimized:' }))
     .pipe(dest(Paths.images.dest));
@@ -208,25 +214,49 @@ const refresh = (done) => {
 };
 exports.refresh = refresh;
 
-// copies assets
-const copyAssets = () => {
-  return src([
-    'source/fonts/**',
-    'source/favicon/**',
-    'source/video/**',
-  ], {
-    base: 'source',
-  })
-    .pipe(dest('build'));
-};
-exports.copyAssets = copyAssets;
-
 // cleans build dir
 const cleanBuildDir = () => {
   return del('build');
 };
 exports.cleanBuildDir = cleanBuildDir;
 
+// -------------------------------
+// Assets
+
+// copies fonts
+const copyFonts = () => {
+  return src(Paths.fonts.src)
+    .pipe(dest(Paths.fonts.output));
+};
+
+// copies favicons
+const copyFavicons = () => {
+  return src(Paths.favicons.src)
+    .pipe(dest(Paths.favicons.output));
+};
+
+// copies manifest and browserconfig
+const copyConfigs = () => {
+  return src([
+    Paths.manifest.src,
+    Paths.browserconfig.src,
+  ])
+    .pipe(dest(BUILD_PATH));
+};
+
+// copies videos
+const copyVideos = () => {
+  return (src(Paths.video.src))
+    .pipe(dest(Paths.video.output));
+};
+
+// copies assets
+const copyAssets = parallel(
+  copyFonts, copyFavicons, copyConfigs, copyVideos
+);
+exports.copyAssets = copyAssets;
+
+// -------------------------------
 // starts local server
 const serve = () => {
   server.init({
@@ -237,27 +267,32 @@ const serve = () => {
     ui: false,
   });
 
+  // pug watcher
   watch(Paths.html.srcWatch, { events: ['all'], delay: 100 }, series(
     compilePug,
     refresh,
   ));
 
+  // scss watcher
   watch(Paths.styles.src, { events: ['all'], delay: 100 }, series(
     compileCss,
   ));
 
+  // js watcher
   watch(Paths.scripts.src, { events: ['all'], delay: 100 }, series(
     buildJs,
     refresh,
   ));
 
+  // images watcher
   watch(Paths.images.src, { events: ['all'], delay: 100 }, series(
     parallel(copyImg, createWebp),
+    optimizeImg,
   ))
 
   watch(Paths.images.spriteSrc, { events: ['all'], delay: 100 }, series(
     generateSvgSprite,
-    reload,
+    refresh,
   ));
 };
 
@@ -265,14 +300,14 @@ exports.build = series(
   cleanBuildDir,
   parallel(copyImg, copyAssets, generateSvgSprite),
   parallel(compilePug, createWebp),
-  parallel(compileCss, buildJs),
+  parallel(compileCss, buildJs, optimizeImg),
 );
 
 exports.default = series(
   cleanBuildDir,
   parallel(copyImg, copyAssets, generateSvgSprite),
   parallel(compilePug, createWebp),
-  parallel(compileCss, buildJs),
+  parallel(compileCss, buildJs, optimizeImg),
   serve
 );
 
