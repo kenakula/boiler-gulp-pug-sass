@@ -53,7 +53,6 @@
     "gulp-webp": "4.0.1",
     "postcss-inline-svg": "^4.1.0",
     "postcss-object-fit-images": "^1.1.2",
-    "pug-lint": "^2.6.0",
     "stylelint": "13.5.0",
     "stylelint-config-htmlacademy": "0.1.x",
     "webpack": "4.42.0",
