@@ -14,4 +14,6 @@ iosVhFix();
 // ---------------------------------
 
 initModals();
-if (menuToggler) menuToggler.addEventListener('click', onMenuTogglerToggleClass);
+if (menuToggler) {
+  menuToggler.addEventListener('click', onMenuTogglerToggleClass);
+}

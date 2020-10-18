@@ -1,7 +1,7 @@
 const menuToggler = document.querySelector('#toggler');
 
 const onMenuTogglerToggleClass = (evt) => {
-  const target = evt.currentTarget
+  const target = evt.currentTarget;
   const targetId = target.getAttribute('data-target-id');
   const targetClassToggle = target.getAttribute('data-target-class-toggle');
 

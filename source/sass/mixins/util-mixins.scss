@@ -170,6 +170,7 @@
 @mixin arrow($direction: down, $size: 5px, $color: #555) {
   width: 0;
   height: 0;
+
   @if ($direction == left) {
     border-top: $size solid transparent;
     border-bottom: $size solid transparent;
