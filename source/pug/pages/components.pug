@@ -5,8 +5,8 @@ block data
 
 block variables
   -
-    const title = 'Компоненты';
-    const pageDescription = 'Компоненты используемые в проекте';
+    const title = "Компоненты";
+    const pageDescription = "Компоненты используемые в проекте";
 
 block main
   style.
@@ -57,7 +57,7 @@ block main
 
   main
     .container
-      a.components-backwards(href='index.html')
+      a.components-backwards(href="index.html")
         span &larr;
         span вернуться на разводящую
       h1 Компоненты, используемые в вёрстке
@@ -65,7 +65,7 @@ block main
       section
         h2 main-nav + toggler
 
-        p Класс компонента: <span style='color: blue;'>.main-nav</span> \ модификаторы: <span style='color: blue;'>--expanded</span>
-        p(style='color: tomato;') Вставляется в блоке <b>nav</b> pug файла, принимает в себя объект из pug/data
+        p Класс компонента: <span style="color: blue;">.main-nav</span> \ модификаторы: <span style="color: blue;">--expanded</span>
+        p(style="color: tomato;") Вставляется в блоке <b>nav</b> pug файла, принимает в себя объект из pug/data
         .component-container
           +main-nav(mainNav)
