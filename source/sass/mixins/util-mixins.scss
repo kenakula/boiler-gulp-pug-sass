@@ -11,7 +11,7 @@
 
 // styles
 
-@mixin hide-text {
+@mixin visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -193,17 +193,6 @@
     border-left: $size solid transparent;
     border-right: $size solid transparent;
     border-bottom: $size solid $color;
-  }
-}
-
-// fonts
-
-@mixin font-face($name, $file) {
-  @font-face {
-    font-family: "#{$name}";
-    src:
-      url("../fonts/#{$file}.woff") format("woff"),
-      url("../fonts/#{$file}.woff2") format("woff2");
   }
 }
 

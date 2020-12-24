@@ -1,10 +1,18 @@
-@font-face {
-  font-style: normal;
-  font-weight: 400;
-  font-family: "";
+$fonts: (
+  ("", "Arial", 400, normal),
+);
 
-  font-display: swap;
-  src:
-    url("../fonts/.woff2") format("woff2"),
-    url("../fonts/.woff") format("woff");
+@mixin font-face($family, $file-name, $weight, $style) {
+  @font-face {
+    font-family: $family;
+    src: url("../fonts/" + $file-name + ".woff2") format("woff2"),
+      url("../fonts/" + $file-name + ".woff") format("woff");
+    font-weight: $weight;
+    font-style: $style;
+    font-display: swap;
+  }
+}
+
+@each $family, $file-name, $weight, $style in $fonts {
+  @include font-face($family, $file-name, $weight, $style);
 }
