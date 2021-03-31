@@ -21,15 +21,6 @@ block nav
 block main
   main
     .container
-      p(style="margin-top: 40px;") Пример вызова модалок
-      p
-        a(href="#", data-modal="feedback") modal--feedback link
-      p
-        a(href="#", data-modal="success") modal--success link
-
-      p(style="margin-top: 40px;") Пример импорта из `pug/data`
-      h3= heading.title
-      i= heading.description
 
 block modals
   +modal("modal--feedback")
