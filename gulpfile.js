@@ -289,7 +289,7 @@ const serve = () => {
   // images watcher
   watch(Paths.images.src, { events: ['all'], delay: 100 }, series(
     parallel(copyImg, createWebp),
-    optimizeImg,
+    generateSvgSprite,
   ))
 
   // svg sprite watcher
@@ -306,11 +306,13 @@ exports.build = series(
   parallel(compileCss, buildJs, optimizeImg),
 );
 
+exports.images = series(optimizeImg);
+
 exports.default = series(
   cleanBuildDir,
   parallel(copyImg, copyAssets, generateSvgSprite),
   parallel(compilePug, createWebp),
-  parallel(compileCss, buildJs, optimizeImg),
+  parallel(compileCss, buildJs),
   serve
 );
 

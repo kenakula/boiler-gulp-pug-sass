@@ -38,7 +38,7 @@
     min-height: 100%;
     padding: 60px 40px;
 
-    @include viewport--sm {
+    @include mobile {
       padding: 60px 16px;
     }
   }
@@ -62,7 +62,7 @@
 
     background-color: $color-default-white;
 
-    @include viewport--sm {
+    @include mobile {
       width: 100%;
       padding: 20px;
     }
@@ -84,7 +84,7 @@
     .modal__content {
       width: auto;
 
-      @include viewport--sm {
+      @include mobile {
         width: 100%;
       }
     }

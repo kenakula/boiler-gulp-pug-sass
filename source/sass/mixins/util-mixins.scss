@@ -4,7 +4,7 @@
   @return $size / 16 * 1rem;
 }
 
-@mixin typography($font-size, $line-height) {
+@mixin font($font-size, $line-height) {
   font-size: rem($font-size);
   line-height: rem($line-height);
 }
@@ -35,27 +35,18 @@
   cursor: pointer;
 }
 
-@mixin transition {
-  transition: all $default-transition-settings;
+@mixin transition($property: all) {
+  transition: $property $default-transition-settings;
 }
 
 @mixin interactive-opacity {
-  transition: opacity $default-transition-settings;
+  @include transition(opacity);
 
   cursor: pointer;
 
-  &:hover,
-  &:focus {
+  &:hover {
     opacity: 0.7;
   }
-
-  &:active {
-    opacity: 0.5;
-  }
-}
-
-@mixin active-opacity {
-  transition: opacity $default-transition-settings;
 
   &:active {
     opacity: 0.5;
@@ -109,6 +100,21 @@
   @include optional-at-root(":-ms-input-placeholder") {
     @content;
   }
+}
+
+@mixin first-letter-caps {
+  &::first-letter {
+    text-transform: capitalize;
+  }
+}
+
+@mixin border-radius {
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
 }
 
 // elements
@@ -194,6 +200,17 @@
     border-right: $size solid transparent;
     border-bottom: $size solid $color;
   }
+}
+
+@mixin hidden-scrollbar {
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background: transparent; /* make scrollbar transparent */
+  }
+
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
 }
 
 //ADAPTIVE BACKGROUND

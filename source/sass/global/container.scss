@@ -4,20 +4,20 @@
   margin: 0 auto;
   padding: 0 40px;
 
-  @include viewport--lg {
+  @include desktop {
     padding: 0 32px;
   }
 
-  @include viewport--md {
+  @include tablet {
     padding: 0 24px;
   }
 
-  @include viewport--sm {
+  @include mobile {
     padding: 0 16px;
   }
 
   &--no-padding {
-    @include viewport--sm {
+    @include mobile {
       padding: 0;
     }
   }
