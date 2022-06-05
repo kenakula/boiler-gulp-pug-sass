@@ -13,6 +13,7 @@ import csso from "gulp-csso";
 import rename from "gulp-rename";
 import debug from "gulp-debug";
 import { paths } from "./paths";
+import {server} from '../gulpfile.babel';
 
 const sass = gulpSass(dartSass);
 const postCssPlugins = [
@@ -43,4 +44,5 @@ export const styles = () =>
     .pipe(rename(paths.styles.minifyFileName))
     .pipe(sourcemap.write("."))
     .pipe(debug({ title: "css compiled: " }))
-    .pipe(dest(paths.styles.dest));
+    .pipe(dest(paths.styles.dest))
+    .pipe(server.stream());

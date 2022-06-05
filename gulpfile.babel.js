@@ -13,7 +13,7 @@ import browserSync from "browser-sync";
 import { BUILD_PATH, paths } from "./tasks/paths";
 import { views } from "./tasks/views";
 
-const server = browserSync.create();
+export const server = browserSync.create();
 
 const compileStyles = styles;
 const compileScripts = scripts;
