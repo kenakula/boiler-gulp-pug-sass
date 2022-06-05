@@ -1,9 +1,0 @@
-mixin header(currentPage, headerMod)
-
-  header(class=(headerMod) ? "header header--" + headerMod : "header")
-    .header__wrapper
-      if (currentPage === "main")
-        a.header__logo Логотип
-      else
-        a.header__logo(href="main.html", aria-label="Переход на главную") Логотип
-      block

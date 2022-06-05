@@ -1,0 +1,19 @@
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  clip: rect(0 0 0 0);
+}
+
+.scroll-lock {
+  position: fixed;
+  overflow-y: auto;
+}
+
+.btn-reset {
+  padding: 0;
+  background: $color-transparent;
+  border: none;
+  cursor: pointer;
+}

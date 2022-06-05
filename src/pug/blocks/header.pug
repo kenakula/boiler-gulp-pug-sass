@@ -1,0 +1,9 @@
+mixin header(isMainPage)
+
+  header.header&attributes(attributes)
+    .header__inner.container
+      if isMainPage
+        a(href="index.html") на главную
+      else
+        a лого
+    +mainNav({links: [{url: '#', name: 'link'}, {url: '#', name: 'link2'}, {url: '#', name: 'link3'}]})

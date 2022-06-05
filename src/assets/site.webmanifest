@@ -1,0 +1,15 @@
+{
+  "name": "frontend boilerplate",
+  "start_url": ".",
+  "short_name": "boiler",
+  "icons": [
+    {
+      "src": "favicons/mstile-150x150.png",
+      "sizes": "270x270",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}

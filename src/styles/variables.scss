@@ -1,0 +1,32 @@
+// Default
+
+$color-default-black: #000000;
+$color-default-white: #ffffff;
+$color-transparent: rgba(255 255 255 0);
+
+// Typography
+//---------------------------------
+
+$font-family--: "", "Arial", sans-serif;
+
+// Animation
+//---------------------------------
+
+$default-transition-duration: 0.2s;
+$default-transition-easing: ease;
+$default-transition-settings: $default-transition-duration $default-transition-easing;
+
+// Viewports
+//---------------------------------
+
+$mobile-small: 320px;
+$tablet: 768px;
+$laptop: 1024px;
+$desktop: 1440px;
+$desktop-wide: 1920px;
+
+// Retina
+//---------------------------------
+
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dppx;
