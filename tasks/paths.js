@@ -1,20 +1,20 @@
-export const SOURCE_PATH = "src/";
-export const BUILD_PATH = "build/";
+export const SOURCE_PATH = 'src/';
+export const BUILD_PATH = 'build/';
 
 export const paths = {
   styles: {
     src: `${SOURCE_PATH}styles/**/*.scss`,
     dest: `${BUILD_PATH}css/`,
     inputFile: `${SOURCE_PATH}styles/style.scss`,
-    minifyFileName: "style.min.css",
+    minifyFileName: 'style.min.css',
   },
   scripts: {
     src: `${SOURCE_PATH}js/**/*.js`,
     dest: `${BUILD_PATH}js/`,
     inputFile: `${SOURCE_PATH}js/main.js`,
     webpackStream: {
-      inputMain: "./js/main.js",
-      inputVendor: "./js/vendor.js",
+      inputMain: './js/main.js',
+      inputVendor: './js/vendor.js',
     },
   },
   views: {
@@ -28,7 +28,7 @@ export const paths = {
     dest: `${BUILD_PATH}img/`,
     spriteSrc: `${SOURCE_PATH}assets/img/svg-sprite/*.svg`,
     spritePath: `${SOURCE_PATH}assets/img/svg-sprite`,
-    spriteFileName: "sprite.svg",
+    spriteFileName: 'sprite.svg',
   },
   fonts: {
     src: `${SOURCE_PATH}assets/fonts/**/*.{woff,woff2}`,

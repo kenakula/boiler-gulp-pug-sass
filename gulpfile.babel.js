@@ -1,17 +1,17 @@
-import { parallel, series, watch } from "gulp";
-import { clear } from "./tasks/clear";
-import { fonts } from "./tasks/fonts";
-import { images } from "./tasks/images";
-import { styles } from "./tasks/styles";
-import { createWebp } from "./tasks/create-webp";
-import { svgSprite } from "./tasks/svg-sprite";
-import { scripts } from "./tasks/scripts";
-import { favicons } from "./tasks/favicons";
-import { webconfigs } from "./tasks/webconfigs";
-import { videos } from "./tasks/videos";
-import browserSync from "browser-sync";
-import { BUILD_PATH, paths } from "./tasks/paths";
-import { views } from "./tasks/views";
+import { parallel, series, watch } from 'gulp';
+import { clear } from './tasks/clear';
+import { fonts } from './tasks/fonts';
+import { images } from './tasks/images';
+import { styles } from './tasks/styles';
+import { createWebp } from './tasks/create-webp';
+import { svgSprite } from './tasks/svg-sprite';
+import { scripts } from './tasks/scripts';
+import { favicons } from './tasks/favicons';
+import { webconfigs } from './tasks/webconfigs';
+import { videos } from './tasks/videos';
+import browserSync from 'browser-sync';
+import { BUILD_PATH, paths } from './tasks/paths';
+import { views } from './tasks/views';
 
 export const server = browserSync.create();
 
@@ -24,10 +24,10 @@ export const copyAssets = parallel(
   webconfigs,
   copyImages,
   videos,
-  favicons
+  favicons,
 );
 
-const refresh = (cb) => {
+const refresh = cb => {
   server.reload();
   cb();
 };
@@ -50,12 +50,12 @@ export const generateSprite = svgSprite;
 export const build = series(
   clear,
   parallel(copyAssets, generateSprite),
-  parallel(compileStyles, compileScripts, views)
+  parallel(compileStyles, compileScripts, views),
 );
 
 export default series(
   clear,
   parallel(copyAssets, generateSprite),
   parallel(compileStyles, compileScripts, views),
-  serve
+  serve,
 );
