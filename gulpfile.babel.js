@@ -1,17 +1,19 @@
 import { parallel, series, watch } from 'gulp';
-import { clear } from './tasks/clear';
-import { fonts } from './tasks/fonts';
-import { images } from './tasks/images';
-import { styles } from './tasks/styles';
-import { createWebp } from './tasks/create-webp';
-import { svgSprite } from './tasks/svg-sprite';
-import { scripts } from './tasks/scripts';
-import { favicons } from './tasks/favicons';
-import { webconfigs } from './tasks/webconfigs';
-import { videos } from './tasks/videos';
 import browserSync from 'browser-sync';
-import { views } from './tasks/views';
-import { paths } from './paths';
+import { BUILD_PATH, paths } from './paths';
+import {
+  clear,
+  createWebp,
+  favicons,
+  fonts,
+  images,
+  scripts,
+  styles,
+  svgSprite,
+  videos,
+  views,
+  webconfigs,
+} from './tasks';
 
 export const server = browserSync.create();
 

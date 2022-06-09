@@ -1,16 +1,15 @@
-$fonts: (("", "Arial", 400, normal));
+// font name - {name}-{variant}.woff/woff2
 
-@mixin font-face($family, $file-name, $weight, $style) {
+@mixin fontFace($variant, $type, $weight, $style) {
+  $directory: "../fonts/";
   @font-face {
-    font-family: $family;
-    src: url("../fonts/" + $file-name + ".woff2") format("woff2"),
-      url("../fonts/" + $file-name + ".woff") format("woff");
+    font-family: "#{$variant}";
+    src: local("#{$variant} #{$type}"), local("#{$variant}-#{$type}"),
+      url("#{$directory}#{$variant}-#{$type}.woff") format("woff"),
+      url("#{$directory}#{$variant}-#{$type}.woff2") format("woff2");
     font-weight: $weight;
     font-style: $style;
-    font-display: swap;
   }
 }
 
-@each $family, $file-name, $weight, $style in $fonts {
-  @include font-face($family, $file-name, $weight, $style);
-}
+@include fontFace("placeholder", "regular", 400, normal);

@@ -6,13 +6,18 @@ export const paths = {
     src: [
       `${SOURCE_PATH}components/**/*.scss`,
       `${SOURCE_PATH}blocks/**/*.scss`,
+      `${SOURCE_PATH}styles/**/*.scss`,
     ],
     dest: `${BUILD_PATH}css/`,
     inputFile: `${SOURCE_PATH}styles/style.scss`,
     minifyFileName: 'style.min.css',
   },
   scripts: {
-    src: `${SOURCE_PATH}js/**/*.js`,
+    src: [
+      `${SOURCE_PATH}js/**/*.js`,
+      `${SOURCE_PATH}components/**/*.js`,
+      `${SOURCE_PATH}blocks/**/*.js`,
+    ],
     dest: `${BUILD_PATH}js/`,
     inputFile: `${SOURCE_PATH}js/main.js`,
     webpackStream: {
