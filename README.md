@@ -69,6 +69,8 @@ include pug mixins in src/pug/base/mixins.pug
 include ../path/to/pug/mixin
 ```
 
+put your pages in src/pug/views
+
 ### scss
 include scss files ing src/styles/style.scss
 ```
