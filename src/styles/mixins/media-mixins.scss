@@ -5,19 +5,19 @@
 }
 
 @mixin min-tablet {
-  @media (min-width: $viewport--md) {
+  @media (min-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin min-laptop {
+  @media (min-width: $laptop) {
     @content;
   }
 }
 
 @mixin min-desktop {
-  @media (min-width: $viewport--lg) {
-    @content;
-  }
-}
-
-@mixin min-container {
-  @media (min-width: $container) {
+  @media (min-width: $desktop) {
     @content;
   }
 }
