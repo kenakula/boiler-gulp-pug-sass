@@ -72,7 +72,7 @@ include ../path/to/pug/mixin
 put your pages in src/pug/views
 
 ### scss
-include scss files ing src/styles/style.scss
+include scss files in src/styles/style.scss
 ```
 @import '../path/to/some/style.scss'
 ```
