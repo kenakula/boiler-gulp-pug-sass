@@ -1,6 +1,6 @@
 import { src, dest } from 'gulp';
 import debug from 'gulp-debug';
-import { paths } from './paths';
+import { paths } from '../paths';
 
 export const fonts = () =>
   src(paths.fonts.src)

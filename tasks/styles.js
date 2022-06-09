@@ -12,7 +12,7 @@ import mqpacker from 'css-mqpacker';
 import csso from 'gulp-csso';
 import rename from 'gulp-rename';
 import debug from 'gulp-debug';
-import { paths } from './paths';
+import { paths } from '../paths';
 import { server } from '../gulpfile.babel';
 
 const sass = gulpSass(dartSass);

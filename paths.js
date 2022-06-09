@@ -3,7 +3,10 @@ export const BUILD_PATH = 'build/';
 
 export const paths = {
   styles: {
-    src: `${SOURCE_PATH}styles/**/*.scss`,
+    src: [
+      `${SOURCE_PATH}components/**/*.scss`,
+      `${SOURCE_PATH}blocks/**/*.scss`,
+    ],
     dest: `${BUILD_PATH}css/`,
     inputFile: `${SOURCE_PATH}styles/style.scss`,
     minifyFileName: 'style.min.css',
@@ -19,7 +22,11 @@ export const paths = {
   },
   views: {
     src: `${SOURCE_PATH}pug/views/*.pug`,
-    srcWatch: `${SOURCE_PATH}pug/**/*.pug`,
+    srcWatch: [
+      `${SOURCE_PATH}components/**/*.pug`,
+      `${SOURCE_PATH}blocks/**/*.pug`,
+      `${SOURCE_PATH}pug/**/*.pug`,
+    ],
     dest: BUILD_PATH,
   },
   images: {

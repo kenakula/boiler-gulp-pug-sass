@@ -10,8 +10,8 @@ import { favicons } from './tasks/favicons';
 import { webconfigs } from './tasks/webconfigs';
 import { videos } from './tasks/videos';
 import browserSync from 'browser-sync';
-import { BUILD_PATH, paths } from './tasks/paths';
 import { views } from './tasks/views';
+import { paths } from './paths';
 
 export const server = browserSync.create();
 

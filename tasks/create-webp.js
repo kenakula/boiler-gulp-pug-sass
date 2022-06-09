@@ -1,5 +1,5 @@
 import { dest, src } from 'gulp';
-import { paths } from './paths';
+import { paths } from '../paths';
 import webp from 'gulp-webp';
 
 export const createWebp = () =>

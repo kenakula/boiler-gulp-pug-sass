@@ -4,7 +4,8 @@ import pug from 'gulp-pug';
 import debug from 'gulp-debug';
 import cached from 'gulp-cached';
 import gulpIf from 'gulp-if';
-import { BUILD_PATH, paths } from './paths';
+import pugIncludeGlob from 'pug-include-glob';
+import { BUILD_PATH, paths } from '../paths';
 import htmlmin from 'gulp-htmlmin';
 
 const isDev = process.env.NODE_ENV === 'development';
@@ -19,7 +20,7 @@ export const views = () =>
         },
       }),
     )
-    .pipe(pug({ pretty: true }))
+    .pipe(pug({ pretty: true, plugins: [pugIncludeGlob()] }))
     .pipe(cached('views'))
     .pipe(debug({ title: 'pages compiled: ' }))
     .pipe(

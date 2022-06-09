@@ -8,7 +8,7 @@ block variables
   - let mainPage = true;
 
 doctype html
-html(class="page no-js" lang="ru")
+html(class="no-js" lang="ru")
   head
     title !{title}
     meta(charset="utf-8")
@@ -53,11 +53,10 @@ html(class="page no-js" lang="ru")
   body
     noscript У вас отключен JavaScript. Это пугает.
     +sprite()
-    .page__content
-      +header(mainPage)
+    +header(mainPage)
+    main
       block main
-    .page__footer
-      +footer()
+    +footer()
 
     block modals
     block scripts

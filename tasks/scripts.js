@@ -1,7 +1,7 @@
 import { dest, src } from 'gulp';
 import webpackStream from 'webpack-stream';
 import config from '../webpack.config';
-import { paths } from './paths';
+import { paths } from '../paths';
 
 export const scripts = () =>
   src(paths.scripts.inputFile)

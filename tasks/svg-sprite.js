@@ -2,7 +2,7 @@ import fs from 'fs';
 import svgmin from 'gulp-svgmin';
 import svgstore from 'gulp-svgstore';
 import { dest, src } from 'gulp';
-import { paths } from './paths';
+import { paths } from '../paths';
 import debug from 'gulp-debug';
 
 const fileExist = filepath => {
