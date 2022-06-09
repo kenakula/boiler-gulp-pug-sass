@@ -1,13 +1,12 @@
+# Gulp boilerplate. Pug + SCSS + ES6 (webpack-stream)
 
-# PUG + SCSS + webpack-stream boilerplate
+Simple but comfy boilerplate for fast building static sites
+## Features
 
-A brief description of what this project does and who it's for
-
-
-## Authors
-
-- [@AgaevKenan](https://github.com/kenakula)
-
+- Component approach
+- ES6 syntax
+- Fast builds and recompiling
+- Autoincluding pug and scss files
 
 ## Run Locally
 
@@ -61,3 +60,37 @@ lint scss files
 ```bash
   npm run stylelint
 ```
+## Usage/Examples
+
+### pug
+
+include pug mixins in src/pug/base/mixins.pug
+```
+include ../path/to/pug/mixin
+```
+
+### scss
+include scss files ing src/styles/style.scss
+```
+@import '../path/to/some/style.scss'
+```
+
+### js
+export components or blocks js files in index.js
+```
+export * from './component/component.js'
+```
+
+then import component script in src/js/main.js
+
+```javascript
+import { initSomething } from '../components';
+
+document.addEventListener('DOMContentLoaded', () => {
+    initSomething();
+})
+```
+## Authors
+
+- [@kenakula](https://github.com/kenakula)
+
