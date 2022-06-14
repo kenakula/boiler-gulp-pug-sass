@@ -30,6 +30,7 @@ export const paths = {
     srcWatch: [
       `${SOURCE_PATH}components/**/*.pug`,
       `${SOURCE_PATH}blocks/**/*.pug`,
+      `${SOURCE_PATH}data/*.pug`,
       `${SOURCE_PATH}pug/**/*.pug`,
     ],
     dest: BUILD_PATH,

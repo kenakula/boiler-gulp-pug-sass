@@ -15,10 +15,11 @@ const fileExist = filepath => {
   return flag;
 };
 
+// eslint-disable-next-line consistent-return
 export const svgSprite = cb => {
   if (fileExist(paths.images.spritePath)) {
     return src(paths.images.spriteSrc)
-      .pipe(svgmin({ plugins: [{ cleanupIDs: { minify: true } }] }))
+      .pipe(svgmin({ plugins: [{ removeViewBox: false }] }))
       .pipe(svgstore({ inlineSvg: true }))
       .pipe(debug({ title: 'sprite generated: ' }))
       .pipe(dest(paths.images.dest));
