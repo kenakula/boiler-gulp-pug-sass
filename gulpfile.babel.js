@@ -17,9 +17,6 @@ import {
 
 export const server = browserSync.create();
 
-const compileStyles = styles;
-const compileScripts = scripts;
-
 const copyImages = parallel(images, createWebp);
 export const copyAssets = parallel(
   fonts,
@@ -41,8 +38,8 @@ const serve = () => {
   });
 
   watch(paths.views.srcWatch, series(views, refresh));
-  watch(paths.styles.src, compileStyles);
-  watch(paths.scripts.src, series(compileScripts, refresh));
+  watch(paths.styles.src, styles);
+  watch(paths.scripts.src, series(scripts, refresh));
   watch(paths.images.src, copyImages, createWebp);
   watch(paths.images.spriteSrc, series(svgSprite, refresh));
 };
@@ -52,12 +49,12 @@ export const generateSprite = svgSprite;
 export const build = series(
   clear,
   parallel(copyAssets, generateSprite),
-  parallel(compileStyles, compileScripts, views),
+  parallel(styles, scripts, views),
 );
 
 export default series(
   clear,
   parallel(copyAssets, generateSprite),
-  parallel(compileStyles, compileScripts, views),
+  parallel(styles, scripts, views),
   serve,
 );
