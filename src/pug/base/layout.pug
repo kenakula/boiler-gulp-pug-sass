@@ -5,10 +5,12 @@ block data
   - const pageDescription = 'Page description';
 
 block variables
-  - let mainPage = true;
+  - const pageLang = 'ru';
+  - const title = 'Document';
+  - const pageDescription = 'Page description';
 
 doctype html
-html(class="no-js" lang="ru")
+html(class="no-js" lang=pageLang)
   head
     title !{title}
     meta(charset="utf-8")
@@ -58,7 +60,6 @@ html(class="no-js" lang="ru")
       block main
     +footer()
 
-    block modals
     block scripts
       script(src="js/vendor.js")
       script(src="js/main.js")

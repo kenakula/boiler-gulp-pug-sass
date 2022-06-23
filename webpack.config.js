@@ -13,7 +13,7 @@ export default {
   },
   devtool: isDev ? 'source-map' : false,
   output: {
-    filename: isDev ? '[name].js' : '[name].min.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'build/js'),
   },
   optimization: {

@@ -9,6 +9,7 @@
       url("#{$directory}#{$variant}-#{$type}.woff2") format("woff2");
     font-weight: $weight;
     font-style: $style;
+    font-display: swap;
   }
 }
 

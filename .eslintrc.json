@@ -92,7 +92,10 @@
     ],
     "no-return-assign": 0,
     "no-return-await": 0,
-    "quotes": [1, "single"],
+    "quotes": [
+      1,
+      "single"
+    ],
     "function-paren-newline": 0,
     "prefer-destructuring": 0,
     "no-extra-boolean-cast": 0,

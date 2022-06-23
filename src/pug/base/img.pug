@@ -19,3 +19,13 @@ mixin imgSvg({path, image, width, height, altText})
     width= width,
     height= height,
     alt= altText)
+
+mixin picture({path, image, format, width, height, altText})
+  picture
+    source(srcset=`img/${path}${image}.webp 1x, img/${path}${image}@2x.webp 2x`, type="image/webp")
+    img(src= `img/${path}${image}.${format}`,
+      srcset= `img/${path}${image}@2x.${format} 2x`,
+      width= width,
+      height= height,
+      alt= altText
+      loading="lazy")
