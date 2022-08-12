@@ -35,6 +35,7 @@ const serve = () => {
   server.init({
     server: BUILD_PATH,
     open: false,
+    notify: false,
   });
 
   watch(paths.views.srcWatch, series(views, refresh));
