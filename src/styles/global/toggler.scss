@@ -4,8 +4,8 @@
   @include button-reset;
 
   position: relative;
-  z-index: 100;
-  display: none;
+  z-index: 101;
+  display: flex;
   justify-content: center;
   align-items: center;
   width: 32px;
@@ -45,8 +45,8 @@
     }
   }
 
-  @include min-tablet {
-    display: flex;
+  @include min-laptop {
+    display: none;
   }
 
   &--close {

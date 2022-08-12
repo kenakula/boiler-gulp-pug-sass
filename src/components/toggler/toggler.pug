@@ -7,5 +7,6 @@
 mixin toggler({label, targetId, switchableClass})
   - const name = label || `Toggle block ${targetId}`;
 
-  button.toggler(aria-label=name, data-target-id=targetId, data-target-class-toggle=switchableClass, data-toggler)
+  button.toggler(aria-label=name, data-target-id=targetId, data-target-class-toggle=switchableClass, data-toggler, data-scroll-lock, data-breakpoint="1024")
     span
+
