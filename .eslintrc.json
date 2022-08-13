@@ -107,7 +107,7 @@
     "default-case": 1,
     "no-restricted-globals": 1,
     "max-classes-per-file": 0,
-    "object-property-newline": 1,
+    "object-property-newline": 0,
     "no-mixed-operators": 1,
     "require-atomic-updates": 1,
     "no-plusplus": 0,
