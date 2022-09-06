@@ -4,13 +4,13 @@
   @include button-reset;
 
   position: relative;
-  z-index: 101;
+  z-index: $layer-toggler;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 32px;
+  width: 40px;
   height: 32px;
-  border-radius: 6px;
+  border-radius: $border-radius1;
   background-color: $color-transparent;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
@@ -18,7 +18,7 @@
   span {
     position: relative;
     display: block;
-    width: 22px;
+    width: 30px;
     height: 2px;
     border-radius: 2px;
     background-color: $color-white;

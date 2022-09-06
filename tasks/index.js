@@ -8,5 +8,6 @@ export * from './scripts';
 export * from './styles';
 export * from './svg-sprite';
 export * from './videos';
-export * from './views';
+export * from './pages';
 export * from './webconfigs';
+export * from './typescript';

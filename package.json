@@ -1,6 +1,6 @@
 {
   "name": "boiler-gulp-pug-sass",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Frontend boilerplate (pug + scss + gulp + typescript)",
   "author": "Agaev Kenan",
   "main": "index.js",

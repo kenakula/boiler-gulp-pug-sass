@@ -1,0 +1,14 @@
+extends ../pug/layout.pug
+
+block variables
+  - const mainPage = false
+  - const image = {path: '', image: 'test-image', format: 'jpg', width: 581, height: 624, altText: 'test image'}
+  - const icon = {name: 'icon-close', width: 80, height: 80}
+
+block main
+  section.section.container
+    p main
+    //- examples
+    +img(image)
+    +picture(image)
+    +icon(icon)

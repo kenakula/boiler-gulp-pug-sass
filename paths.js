@@ -20,18 +20,23 @@ export const paths = {
     ],
     dest: `${BUILD_PATH}js/`,
     inputFile: `${SOURCE_PATH}js/main.js`,
+    ts: {
+      src: `${SOURCE_PATH}ts/**/*.ts`,
+      dest: `${SOURCE_PATH}js/`,
+      watch: `${SOURCE_PATH}ts/**/*.ts`,
+    },
     webpackStream: {
       inputMain: './js/main.js',
       inputVendor: './js/vendor.js',
     },
   },
-  views: {
-    src: `${SOURCE_PATH}pug/views/*.pug`,
+  pages: {
+    src: `${SOURCE_PATH}pages/*.pug`,
     srcWatch: [
       `${SOURCE_PATH}components/**/*.pug`,
-      `${SOURCE_PATH}blocks/**/*.pug`,
+      `${SOURCE_PATH}pages/*.pug`,
       `${SOURCE_PATH}data/*.pug`,
-      `${SOURCE_PATH}pug/**/*.pug`,
+      `${SOURCE_PATH}pug/*.pug`,
     ],
     dest: BUILD_PATH,
   },

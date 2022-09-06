@@ -10,18 +10,19 @@ import htmlmin from 'gulp-htmlmin';
 
 const isDev = process.env.NODE_ENV === 'development';
 
-export const views = () =>
-  src(paths.views.src)
+export const pages = () =>
+  src(paths.pages.src)
     .pipe(
       gulpPlumber({
         errorHandler: function (err) {
+          // eslint-disable-next-line no-console
           console.log(err.message);
           this.emit('task ended');
         },
       }),
     )
     .pipe(pug({ pretty: true, plugins: [pugIncludeGlob()] }))
-    .pipe(cached('views'))
+    .pipe(cached('pages'))
     .pipe(debug({ title: 'pages compiled: ' }))
     .pipe(
       gulpIf(

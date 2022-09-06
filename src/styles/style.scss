@@ -1,3 +1,4 @@
+// @import "vendor/swiper";
 @import "vendor/normalize";
 
 @import "variables";
@@ -8,8 +9,7 @@
 @import "global/utils";
 @import "global/animations";
 @import "global/container";
-
 @import "global/section";
+@import "global/toggler";
 
-@import "../blocks/**/*.scss";
 @import "../components/**/*.scss";

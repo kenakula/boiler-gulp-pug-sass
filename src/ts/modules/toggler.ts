@@ -1,7 +1,12 @@
 export const initTogglers = () => {
   const togglers = document.querySelectorAll('[data-toggler]');
 
-  const switchClass = (scrollLock, togglerEl, targetEl, switchableClass) => {
+  const switchClass = (
+    scrollLock: string,
+    togglerEl: Element,
+    targetEl: Element,
+    switchableClass: string,
+  ) => {
     const isActive = targetEl.classList.contains(switchableClass);
     const scrollLockClass = scrollLock && 'scroll-lock';
 
@@ -9,21 +14,23 @@ export const initTogglers = () => {
       const top = document.documentElement.scrollTop;
       targetEl.classList.add(switchableClass);
       togglerEl.classList.add('toggler--close');
-      document.body.setAttribute('data-scroll', top);
+      document.body.setAttribute('data-scroll', top.toString());
       setTimeout(() => {
         document.body.classList.add(scrollLockClass);
       }, 200);
     } else {
       document.body.classList.remove(scrollLockClass);
       const scrollPos = document.body.getAttribute('data-scroll');
-      window.scrollTo({ top: scrollPos });
+      window.scrollTo({ top: Number(scrollPos) });
       targetEl.classList.remove(switchableClass);
       togglerEl.classList.remove('toggler--close');
     }
   };
 
-  const initToggler = e => {
-    const target = e.target.closest('[data-toggler]');
+  const initToggler = (e: MouseEvent) => {
+    const target = (e.target as HTMLElement).closest(
+      '[data-toggler]',
+    ) as HTMLElement;
 
     if (!target) {
       return;

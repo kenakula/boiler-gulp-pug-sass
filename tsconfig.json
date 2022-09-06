@@ -1,0 +1,23 @@
+{
+  "compileOnSave": true,
+  "buildOnSave": true,
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "lib": [ "es2015", "dom" ],
+    "removeComments": true,
+    "noImplicitAny": true,
+    "suppressImplicitAnyIndexErrors": false,
+    "baseUrl": "./",
+  },
+  "include": [
+    "src/**/*.ts",
+  ],
+  "exclude": [
+    "**/node_modules",
+    "**/build",
+    "tasks/*.js",
+  ]
+}
