@@ -9,7 +9,8 @@
     "build": "cross-env NODE_ENV=production gulp build",
     "lint": "eslint \"src/**/*.js\"",
     "lint-fix": "eslint \"src/**/*.js\" --fix",
-    "stylelint": "stylelint \"src/styles/**/*.scss\" \"!src/styles/global/reboot.scss\" \"!src/styles/mixins/util-mixins.scss\" --fix"
+    "stylelint": "stylelint \"src/styles/**/*.scss\" \"!src/styles/global/reboot.scss\" \"!src/styles/mixins/util-mixins.scss\" --fix",
+    "validate": "html-validator build"
   },
   "keywords": [],
   "license": "ISC",
@@ -55,6 +56,7 @@
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard-scss": "^4.0.0",
     "stylelint-scss": "^4.2.0",
+    "w3c-html-validator": "^1.2.1",
     "webpack-stream": "^7.0.0"
   },
   "browserslist": {

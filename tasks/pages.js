@@ -15,8 +15,7 @@ export const pages = () =>
     .pipe(
       gulpPlumber({
         errorHandler: function (err) {
-          // eslint-disable-next-line no-console
-          console.log(err.message);
+          console.error(err.message);
           this.emit('task ended');
         },
       }),
