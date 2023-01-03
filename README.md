@@ -61,6 +61,12 @@ lint scss files
 ```bash
   npm run stylelint
 ```
+
+validate html files
+
+```bash
+  npm run validate
+```
 ## Usage/Examples
 
 ### pug
