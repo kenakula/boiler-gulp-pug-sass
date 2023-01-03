@@ -20,7 +20,7 @@ export const pages = () =>
         },
       }),
     )
-    .pipe(pug({ pretty: true, plugins: [pugIncludeGlob()] }))
+    .pipe(pug({ plugins: [pugIncludeGlob()], compileDebug: true }))
     .pipe(cached('pages'))
     .pipe(debug({ title: 'pages compiled: ' }))
     .pipe(
