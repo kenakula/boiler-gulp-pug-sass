@@ -1,3 +1,5 @@
+@use "../variables" as var;
+
 // typography
 
 @function rem($size) {
@@ -31,7 +33,7 @@
   display: block;
   border: none;
   padding: 0;
-  background-color: $color-transparent;
+  background-color: var.$color-transparent;
   cursor: pointer;
 }
 
@@ -124,42 +126,42 @@
   height: 0;
   border-style: solid;
 
-  @if $direction == top {
+  @if $direction ==top {
     border-width: 0 $sizeV $sizeH $sizeV;
     border-color: transparent transparent $color transparent;
   }
 
-  @if $direction == bottom {
+  @if $direction ==bottom {
     border-width: $sizeV $sizeH 0 $sizeV;
     border-color: $color transparent transparent transparent;
   }
 
-  @if $direction == left {
+  @if $direction ==left {
     border-width: $sizeV $sizeH $sizeV 0;
     border-color: transparent $color transparent transparent;
   }
 
-  @if $direction == right {
+  @if $direction ==right {
     border-width: $sizeV 0 $sizeV $sizeH;
     border-color: transparent transparent transparent $color;
   }
 
-  @if $direction == topright {
+  @if $direction ==topright {
     border-width: 0 $sizeH $sizeV 0;
     border-color: transparent $color transparent transparent;
   }
 
-  @if $direction == bottomright {
+  @if $direction ==bottomright {
     border-width: 0 0 $sizeH $sizeV;
     border-color: transparent transparent $color transparent;
   }
 
-  @if $direction == bottomleft {
+  @if $direction ==bottomleft {
     border-width: $sizeH 0 0 $sizeV;
     border-color: transparent transparent transparent $color;
   }
 
-  @if $direction == topleft {
+  @if $direction ==topleft {
     border-width: $sizeH $sizeV 0 0;
     border-color: $color transparent transparent transparent;
   }
@@ -169,19 +171,25 @@
   width: 0;
   height: 0;
 
-  @if ($direction == left) {
+  @if ($direction ==left) {
     border-top: $size solid transparent;
     border-bottom: $size solid transparent;
     border-right: $size solid $color;
-  } @else if ($direction == right) {
+  }
+
+  @else if ($direction ==right) {
     border-top: $size solid transparent;
     border-bottom: $size solid transparent;
     border-left: $size solid $color;
-  } @else if ($direction == down) {
+  }
+
+  @else if ($direction ==down) {
     border-left: $size solid transparent;
     border-right: $size solid transparent;
     border-top: $size solid $color;
-  } @else {
+  }
+
+  @else {
     border-left: $size solid transparent;
     border-right: $size solid transparent;
     border-bottom: $size solid $color;
@@ -192,11 +200,14 @@
   &::-webkit-scrollbar {
     width: 0;
     height: 0;
-    background: transparent; /* make scrollbar transparent */
+    background: transparent;
+    /* make scrollbar transparent */
   }
 
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 //ADAPTIVE BACKGROUND

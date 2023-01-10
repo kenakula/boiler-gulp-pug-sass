@@ -1,6 +1,8 @@
+@use "../variables" as var;
+
 .container {
   width: 100%;
-  max-width: $desktop;
+  max-width: var.$desktop;
   margin: 0 auto;
   padding: 0 20px;
 }

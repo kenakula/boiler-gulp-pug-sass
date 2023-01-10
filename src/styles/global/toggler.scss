@@ -1,17 +1,20 @@
+@use "../variables" as var;
+@use "../mixins" as mixin;
+
 .toggler {
   $c: &;
 
-  @include button-reset;
+  @include mixin.button-reset;
 
   position: relative;
-  z-index: $layer-toggler;
+  z-index: var.$layer-toggler;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 40px;
   height: 32px;
-  border-radius: $border-radius1;
-  background-color: $color-transparent;
+  border-radius: var.$border-radius1;
+  background-color: var.$color-transparent;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 
@@ -21,19 +24,19 @@
     width: 30px;
     height: 2px;
     border-radius: 2px;
-    background-color: $color-white;
-    transition: transform $default-transition-settings, background $default-transition-settings;
+    background-color: var.$color-white;
+    transition: transform var.$default-transition-settings, background var.$default-transition-settings;
 
     &::before,
     &::after {
-      @include pseudo;
+      @include mixin.pseudo;
 
       left: 0;
       width: 100%;
       height: 2px;
       border-radius: 2px;
-      background-color: $color-white;
-      transition: transform $default-transition-settings;
+      background-color: var.$color-white;
+      transition: transform var.$default-transition-settings;
     }
 
     &::before {
@@ -45,7 +48,7 @@
     }
   }
 
-  @include min-laptop {
+  @include mixin.min-laptop {
     display: none;
   }
 

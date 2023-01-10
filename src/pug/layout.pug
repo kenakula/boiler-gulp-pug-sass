@@ -1,13 +1,7 @@
 include mixins
 
 block data
-  - const title = 'Document';
-  - const pageDescription = 'Page description';
-
 block variables
-  - const pageLang = 'ru';
-  - const title = 'Document';
-  - const pageDescription = 'Page description';
 
 doctype html
 html(class="no-js" lang=pageLang)
@@ -34,28 +28,28 @@ html(class="no-js" lang=pageLang)
     meta(name="theme-color" content="#ffffff")
     //-
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    meta(name="title" content="Meta Tags — Preview, Edit and Generate")
+    meta(name="title" content=title)
     meta(name="description", content=pageDescription)
 
     //- Open Graph / Facebook
     meta(property="og:type" content="website")
     meta(property="og:url" content="https://metatags.io/")
-    meta(property="og:title" content="Meta Tags — Preview, Edit and Generate")
-    meta(property="og:description" content="With Meta Tags you can edit and experiment with your content then preview how your webpage will look on Google, Facebook, Twitter and more!")
+    meta(property="og:title" content=title)
+    meta(property="og:description" content=pageDescription)
     meta(property="og:image" content="favicons/mstile-150x150.png")
 
     //- Twitter
     meta(property="twitter:card" content="summary_large_image")
     meta(property="twitter:url" content="https://metatags.io/")
-    meta(property="twitter:title" content="Meta Tags — Preview, Edit and Generate")
-    meta(property="twitter:description" content="With Meta Tags you can edit and experiment with your content then preview how your webpage will look on Google, Facebook, Twitter and more!")
+    meta(property="twitter:title" content=title)
+    meta(property="twitter:description" content=pageDescription)
     meta(property="twitter:image" content="favicons/mstile-150x150.png")
 
     link(rel="stylesheet", href="css/style.min.css")
     link(rel="preload", href="fonts/placeholder-regular.woff2" as="font" type="font/woff2" crossorigin)
   body
     noscript У вас отключен JavaScript. Это пугает.
-    +header(mainPage)
+    +header(isMainPage, page)
     main
       block main
     +footer()

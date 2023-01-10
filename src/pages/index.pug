@@ -1,13 +1,16 @@
 extends ../pug/layout.pug
 
 block variables
-  - const mainPage = false
-  - const image = {path: '', image: 'test-image', format: 'jpg', width: 581, height: 624, altText: 'test image'}
-  - const icon = {name: 'icon-close', width: 80, height: 80}
+  - const isMainPage = false;
+  - const page = 'link';
+  - const image = {path: '', image: 'test-image', format: 'jpg', width: 581, height: 624, altText: 'test image'};
+  - const icon = {name: 'icon-close', width: 80, height: 80};
   - const pageLang = 'ru';
+  - const title = 'Document';
+  - const pageDescription = 'Page description';
 
 block main
-  section.section.container
+  section.container
     h2 main page
     p main
     //- examples
