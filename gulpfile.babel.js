@@ -40,7 +40,6 @@ const serve = () => {
 
   watch(paths.pages.srcWatch, series(pages, refresh));
   watch(paths.styles.src, styles);
-  watch(paths.scripts.src, series(scripts, refresh));
   watch(paths.images.src, parallel(images, createWebp));
   watch(paths.images.spriteSrc, series(svgSprite, refresh));
   watch(paths.scripts.ts.src, series(typescript, scripts, refresh));

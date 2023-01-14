@@ -13,11 +13,6 @@ export const paths = {
     minifyFileName: 'style.min.css',
   },
   scripts: {
-    src: [
-      `${SOURCE_PATH}js/**/*.js`,
-      `${SOURCE_PATH}components/**/*.js`,
-      `${SOURCE_PATH}blocks/**/*.js`,
-    ],
     dest: `${BUILD_PATH}js/`,
     inputFile: `${SOURCE_PATH}js/main.js`,
     ts: {
