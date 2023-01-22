@@ -1,1 +1,0 @@
-export const DUDE_CONSTANT = 'DUDEMAISTER';

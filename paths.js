@@ -13,13 +13,9 @@ export const paths = {
     minifyFileName: 'style.min.css',
   },
   scripts: {
+    src: [`${SOURCE_PATH}js/**/*.js`],
     dest: `${BUILD_PATH}js/`,
     inputFile: `${SOURCE_PATH}js/main.js`,
-    ts: {
-      src: `${SOURCE_PATH}ts/**/*.ts`,
-      dest: `${SOURCE_PATH}js/`,
-      watch: `${SOURCE_PATH}ts/**/*.ts`,
-    },
     webpackStream: {
       inputMain: './js/main.js',
       inputVendor: './js/vendor.js',

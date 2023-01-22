@@ -10,4 +10,3 @@ export * from './svg-sprite';
 export * from './videos';
 export * from './pages';
 export * from './webconfigs';
-export * from './typescript';

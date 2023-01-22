@@ -42,7 +42,6 @@
     "gulp-sourcemaps": "^3.0.0",
     "gulp-svgmin": "^4.1.0",
     "gulp-svgstore": "^9.0.0",
-    "gulp-typescript": "^6.0.0-alpha.1",
     "gulp-webp": "^4.0.1",
     "i": "^0.3.7",
     "npm": "^8.12.1",
