@@ -5,7 +5,6 @@ Simple but comfy boilerplate for fast building static sites
 
 - Component approach
 - ES6 syntax
-- typescript support
 - Fast builds and recompiling
 - Autoincluding pug and scss files
 
@@ -82,19 +81,6 @@ put your pages in src/pug/views
 include scss files in src/styles/style.scss
 ```
 @import '../path/to/some/style.scss'
-```
-
-### ts
-add ts files to modules folder and its index.ts, then import functions in main.ts.
-```
-place vendor files in vendor folder and import them in vendor.ts
-
-```javascript
-import { initSomething } from './modules';
-
-document.addEventListener('DOMContentLoaded', () => {
-  initSomething();
-})
 ```
 ## Authors
 
