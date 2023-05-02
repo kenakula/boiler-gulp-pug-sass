@@ -8,7 +8,6 @@ import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
 import objectFitImages from 'postcss-object-fit-images';
 import inlineSVG from 'postcss-inline-svg';
-import mqpacker from 'css-mqpacker';
 import csso from 'gulp-csso';
 import rename from 'gulp-rename';
 import debug from 'gulp-debug';
@@ -18,9 +17,6 @@ import { server } from '../gulpfile.babel';
 const sass = gulpSass(dartSass);
 const postCssPlugins = [
   autoprefixer({ grid: true, flexbox: true }),
-  mqpacker({
-    sort: true,
-  }),
   inlineSVG(),
   objectFitImages(),
 ];
